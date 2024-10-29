@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= content_for?(:title) ? yield(:title) : 'DigiBakery' %></title>
+    <meta content="<%= content_for?(:description) ? yield(:description) : 'DigiBakery2' %>" name="description"/>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= side_load_stylesheets %>
+  </head>
+
+  <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main" class="container">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </main>
+
+    <%= side_load_javascripts type: 'module', defer: true %>
+  </body>
+</html>

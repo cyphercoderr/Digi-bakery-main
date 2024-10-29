@@ -1,0 +1,57 @@
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Add a semi-transparent overlay */
+  z-index: 1000;
+  /* Ensure the loader is on top of everything else */
+  transition: opacity 0.3s ease;
+}
+
+.loader {
+  /* Add any additional styles you want for the loader container */
+}
+
+.loader-container.loaded {
+  opacity: 0;
+  /* Fade out when loaded */
+}
+
+
+.orders-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  overflow: hidden;
+  /* Hide overflow for smooth appearance */
+
+  & th,
+  & td {
+    padding: 12px;
+    /* Increase padding for better spacing */
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  & button {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+  }
+
+  & th {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  & tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}

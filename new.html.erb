@@ -1,0 +1,24 @@
+<h3>New Batch Cookie for oven '<%= @oven.name %>'</h3>
+
+<%= form_for [@oven, @batch_cookie] do |f| %>
+  <div class="row">
+    <div class="small-8 columns">
+      <%= f.label :fillings %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="small-8 columns">
+      <%= f.text_field :fillings %>
+    </div>
+    <div class="small-8 columns">
+      <%= f.number_field :count %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-8 columns">
+      <%= f.submit 'Mix and bake', class: 'button' %>
+    </div>
+  </div>
+<% end %>

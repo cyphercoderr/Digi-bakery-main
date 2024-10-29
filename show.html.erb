@@ -1,0 +1,17 @@
+<h3><%= @oven.name %></h3>
+
+<div class="cookie-info">
+  Batch in oven:
+  <% if @batch %>
+    1 batch of <%= @batch.count %> Cookies with <%= @batch.fillings || "no fillings" %>
+        <p>Your Cookies are <span id='cookie-status'><%= @batch.status%></span></p>
+      <div id='cookie-block' style='display: none;'>
+        <%= button_to "Retrieve Batch", empty_oven_path, class: 'button tiny' %>
+      </div>
+  <% else %>
+    None
+  <% end %>
+</div>
+
+<br/>
+<%= link_to "Prepare Cookie", new_oven_batch_cookies_path(@oven), class: 'button' %>
